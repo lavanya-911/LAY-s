@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="C:\Users\Lavanya Shankar\Desktop\asdidddd\styles.css">
+</head>
+<body>
+    <div class="header">Teacher Dashboard</div>
+    <div class="sidebar">
+        <a href="#" onclick="showSection('assignments')">📚 Assignments</a>
+        <a href="#" onclick="showSection('tests')">📝 Assign Tests</a>
+        <a href="#" onclick="showSection('attendance')">📅 Attendance</a>
+        <a href="#" onclick="showSection('guidance')">📖 Faculty Guidance</a>
+        <a href="#" onclick="showSection('students')">👨‍🎓 View Students</a>
+        <a href="#" onclick="showSection('chat')">💬 Chat</a>
+        <a href="index.html">🔙 Logout</a>
+    </div>
+
+    <div class="main-content">
+        <div id="assignments" class="card">
+            <h2>📚 Manage Assignments</h2>
+            <input type="text" id="assignmentTitle" placeholder="Assignment Title">
+            <input type="date" id="dueDate">
+            <button onclick="createAssignment()">Create Assignment</button>
+            <h3>📜 Assigned Assignments</h3>
+            <ul id="assignmentList"></ul>
+        </div>
+
+        <div id="tests" class="card">
+            <h2>📝 Assign Personalized Tests</h2>
+            <input type="text" id="testTitle" placeholder="Test Title">
+            <input type="date" id="testDate">
+            <input type="text" id="studentNameTest" placeholder="Assign to Student">
+            <button onclick="assignTest()">Assign Test</button>
+            <h3>📊 Assigned Tests</h3>
+            <ul id="testList"></ul>
+        </div>
+
+        <div id="attendance" class="card">
+            <h2>📅 Mark Attendance</h2>
+            <table id="attendanceTable"></table>
+        </div>
+
+        <div id="guidance" class="card">
+            <h2>📖 Faculty Guidance</h2>
+            <textarea id="announcementInput"></textarea>
+            <button onclick="postAnnouncement()">Post</button>
+            <ul id="announcementList"></ul>
+        </div>
+
+        <div id="students" class="card">
+            <h2>👨‍🎓 My Students</h2>
+            <ul id="studentList"></ul>
+        </div>
+
+        <div id="chat" class="card">
+            <h2>💬 Chat</h2>
+            <div id="chatBox"></div>
+            <input type="text" id="chatInput">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

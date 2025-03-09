@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="C:\Users\Lavanya Shankar\Desktop\asdidddd\styles.css">
+    <style>
+        .main-content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+        .card {
+            display: none;
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .test-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .test-card {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #chatBox {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+            width: 100%;
+        }
+        #chatInput {
+            width: 80%;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Student Dashboard</div>
+    <div class="sidebar">
+        <a href="#" onclick="showSection('assignments')">📚 Assignments</a>
+        <a href="#" onclick="showSection('tests')">📝 My Tests</a>
+        <a href="#" onclick="showSection('chat')">💬 Chat with Teacher</a>
+        <a href="index.html">🔙 Logout</a>
+    </div>
+
+    <div class="main-content">
+        <div id="assignments" class="card">
+            <h2>📚 My Assignments</h2>
+            <input type="file" id="fileUpload" />
+            <button onclick="uploadToGoogleDrive()">Upload to Google Drive</button>
+            <ul id="studentAssignments"></ul>
+        </div>
+
+        <div id="tests" class="card">
+            <h2>📝 My Assigned Tests</h2>
+            <div class="test-container">
+                <div class="test-card">🤔 <a href="critical-game.html">Critical Thinking & Decision Making</a></div>
+                <div class="test-card">🎨 <a href="creativity.html">Creativity & Educational Difficulties</a></div>
+                <div class="test-card">💬 <a href="social_skills.html">Social & Communication Skills</a></div>
+                <div class="test-card">🔢 <a href="finance-game.html">Mathematical Problem Solving</a></div>
+                <div class="test-card">📖 <a href="productivity.html">Planning and Sorting/Categorization</a></div>
+                <div class="test-card">🎼 <a href="stress_management.html">Music & Rhythm Learning</a></div>
+                <div class="test-card">🏃 <a href="learning_adaptability.html">Physical Activity & Coordination</a></div>
+            </div>
+        </div>
+
+        <div id="chat" class="card">
+            <h2>💬 Chat with Teacher</h2>
+            <div id="chatBox"></div>
+            <input type="text" id="chatInput">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.card').forEach(card => card.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
+        function sendMessage() {
+            const chatBox = document.getElementById("chatBox");
+            const chatInput = document.getElementById("chatInput");
+            if (chatInput.value.trim() !== "") {
+                const message = document.createElement("p");
+                message.textContent = chatInput.value;
+                chatBox.appendChild(message);
+                chatInput.value = "";
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>

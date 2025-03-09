@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Game</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .game-container {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        .items-container {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">🧩 Sorting Game</div>
+    <div class="sidebar">
+        <a href="../student.html">🏠 Dashboard</a>
+        <a href="../games/finance-game.html">Next Game →</a>
+    </div>
+
+    <div class="main-content">
+        <div class="game-container">
+            <h2>Sort the Items into Correct Categories</h2>
+            
+            <div class="items-container">
+                <div class="draggable" draggable="true" id="apple" ondragstart="drag(event)">🍎 Apple</div>
+                <div class="draggable" draggable="true" id="car" ondragstart="drag(event)">🚗 Car</div>
+            </div>
+
+            <div class="categories">
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <h3>🍏 Food Category</h3>
+                    <p>Drag food items here</p>
+                </div>
+                
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <h3>🚗 Vehicles Category</h3>
+                    <p>Drag vehicles here</p>
+                </div>
+            </div>
+
+            <div class="feedback" id="gameFeedback" style="margin-top: 1rem;"></div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="critical-game.js"></script>
+
+
+</body>
+</html>

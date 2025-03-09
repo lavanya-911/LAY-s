@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Story Building Game</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="header">📖 Story Builder</div>
+    <div class="sidebar">
+        <a href="../student.html">🏠 Dashboard</a>
+        <a href="../games/critical-game.html">Next Game →</a>
+    </div>
+
+    <div class="game-container">
+        <h2>Build Your Story</h2>
+        <div class="story-options">
+            <div class="story-part" onclick="addToStory('Once upon a time...')">🏰 Beginning</div>
+            <div class="story-part" onclick="addToStory('there was a friendly dragon.')">🐉 Character</div>
+            <div class="story-part" onclick="addToStory('They lived happily ever after!')">🎉 Ending</div>
+        </div>
+        <div id="story-output" class="drop-zone"></div>
+        <button class="button" onclick="completeGame()">Finish Story</button>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="creativity-game.js"></script>
+</body>
+</html>
